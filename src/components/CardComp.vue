@@ -17,25 +17,8 @@ export default {
     props: {
         singleAlbum: Object,
         Title: String
-    },
-    //  data() {
-    //     return {
-    //        cazzo:'',
-    //     }
-    // },
-    // mounted() {
-    //  //this.toUpperCase();
-      
-        
-    // },
-    // methods: {
-    //   titleUppercase(){
-
-    //     this.props.Title.toUpperCase();
-    //     this.cazzo = this.props.Title.toUpperCase();
-    //     console.log(this.cazzo);
-    //   }
-    // }
+    }
+    
 }
 </script>
 
@@ -44,26 +27,30 @@ export default {
 
 .crd-cnt{ 
     
-    width:calc(100% / 5 - 10px);
+     width:calc(100% / 5 - 10px);
      padding:10px 20px;
+     
      
     
 
     .crd{
 
-        padding: 10px 10px;
+        padding: 10px ;
         background-color: rgb(47, 58, 70);
         color: white;
         text-align: center;
         
+        
         .title{
+         
          padding-top:10px;
          line-height: 1.2rem;
-         font-size:1.2rem;   
+         font-size:1rem;   
          font-weight: bold;
         }
         .author,.year{
-            font-size:1rem;
+            color: rgb(125, 118, 112);
+            font-size:0.7rem;
 
         }
         
@@ -71,7 +58,7 @@ export default {
         img{
             
             aspect-ratio: 1/1;
-            width: 100px;
+            width: 110px;
             
         }
     }

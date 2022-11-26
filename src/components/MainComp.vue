@@ -2,9 +2,10 @@
     <div class="main-cnt">
         <div class="main d-flex flex-wrap ">
             <CardComp v-for="(album ,index) in arrayAlbum" 
-            :key="index"
-             :Title="album.title"
-             :singleAlbum="album" />
+             :key="index"
+             :Title="album.title.toUpperCase()"
+             :singleAlbum="album"
+               />
         </div>
     </div>
 </template>
@@ -54,7 +55,8 @@ export default {
     
     width: 60%;
     margin:0px auto;
-    padding: 30px 0;
+    padding: 90px 0;
+    
 }
 
 </style>
