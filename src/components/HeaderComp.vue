@@ -1,7 +1,10 @@
 <template>
     <div>
-       <nav>
-         Header
+       <nav class="d-flex justify-content-between">
+         <div>
+            <img src="../assets/spotify-logo.webp" alt="">
+         </div>
+         <div></div>
        </nav>
     </div>
 </template>
@@ -15,7 +18,13 @@
 <style lang="scss" scoped>
 
 nav{
-    text-align: center;
+    
+   background-color: rgb(47, 58, 70);
+
+    img{
+        margin: 10px;
+        width: 10%;
+    }
 }
 
 </style>

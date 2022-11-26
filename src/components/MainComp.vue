@@ -1,7 +1,10 @@
 <template>
     <div class="main-cnt">
-        <div class="main d-flex flex-wrap justify-content-around">
-            <CardComp v-for="(album ,index) in arrayAlbum" :key="index" :singleAlbum="album" />
+        <div class="main d-flex flex-wrap ">
+            <CardComp v-for="(album ,index) in arrayAlbum" 
+            :key="index"
+             :Title="album.title"
+             :singleAlbum="album" />
         </div>
     </div>
 </template>
@@ -32,7 +35,7 @@ export default {
         getPersonaggi() {
             axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                 .then((resp) => {
-                    console.log(resp.data.response)
+                    //console.log(resp.data.response)
                     this.arrayAlbum = resp.data.response;
                 })
         }
@@ -45,12 +48,13 @@ export default {
 
 
 .main-cnt{
-    background-color: rgb(30, 45, 59);
+   background-color: rgb(30, 45, 59);
 }
 .main{
     
-     width: 70%;
-    margin: 0 auto;
+    width: 60%;
+    margin:0px auto;
+    padding: 30px 0;
 }
 
 </style>
