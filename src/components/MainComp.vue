@@ -1,7 +1,8 @@
 <template>
     <div class="main-cnt">
         <div class="main d-flex flex-wrap ">
-            <CardComp v-for="(album ,index) in arrayAlbum" 
+            <CardComp
+             v-for="(album ,index) in arrayAlbum" 
              :key="index"
              :Title="album.title.toUpperCase()"
              :singleAlbum="album"
@@ -26,18 +27,30 @@ export default {
     data() {
         return {
             arrayAlbum: [],
+            arrayGeneri:[]
         }
     },
     mounted() {
 
-        this.getPersonaggi();
+        this.getAlbums();
     },
     methods: {
-        getPersonaggi() {
+        getAlbums() {
             axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                 .then((resp) => {
                     //console.log(resp.data.response)
+                    //oarray di oggetti albums 
                     this.arrayAlbum = resp.data.response;
+                    //estraggo solo il genere
+                    this.arrayAlbum.forEach((singoloAlbum)=>{
+
+                        if(this.arrayGeneri.includes(singoloAlbum.genre)){
+
+                        }
+
+                        this.arrayGeneri.push(singoloAlbum.genre)
+                       
+                    })
                 })
         }
     }
