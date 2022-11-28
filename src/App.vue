@@ -1,7 +1,12 @@
 <template>
     <div id="app">
-        <HeaderComp/>
-        <MainComp @emitGeneri="listaGeneri" />
+        <HeaderComp
+        :arrayGeneriApptoHeader="arrayGeneri"
+        :arrayAutoriApptoHeader="arrayAutori"
+        />
+        <MainComp
+        @emitAutoriMain="listaAutori" 
+        @emitGeneriMain="listaGeneri" />
         <FooterComp />
     </div>
 </template>
@@ -20,15 +25,19 @@ export default {
     },
     data() {
         return{
-         arrayGeneri:[]
+         arrayGeneri:[],
+         arrayAutori:[]
         }
     },
     mounted() {
 
     },
     methods: {
-     listaGeneri(arrayGeneriMain){
-     this.arrayGeneri = arrayGeneriMain
+     listaGeneri(arrayGeneriMaintoApp){
+     this.arrayGeneri = arrayGeneriMaintoApp
+     },
+     listaAutori(arrayAutoriMaintoHeader){
+     this.arrayAutori = arrayAutoriMaintoHeader
      }
     }
 }

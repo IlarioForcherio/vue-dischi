@@ -19,17 +19,23 @@ import axios from 'axios'
 export default {
     name: 'MainComp',
     components: {
-        CardComp
+        CardComp,
+        
+        // props:{
+
+        // }
     },
     data() {
         return {
             arrayAlbum: [],
-            arrayGeneriMain:[]
+            arrayGeneriMain:[],
+            arrayAutoriMain:[]
         }
     },
     mounted() {
         
         this.getAlbums();
+        this.$emit();
         this.$emit();
     },
     methods: {
@@ -46,7 +52,10 @@ export default {
                             this.arrayGeneriMain.push(singoloAlbum.genre)
                         }
 
-                         this.$emit('emitGeneri',this.arrayGeneriMain)
+                        this.arrayAutoriMain.push(singoloAlbum.author)
+                         //emit e' una funzione, quindi puo' essere usata come evento da richiamare
+                         this.$emit('emitGeneriMain',this.arrayGeneriMain)
+                         this.$emit('emitAutoriMain', this.arrayAutoriMain)
                         
                        
                     })

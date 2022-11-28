@@ -1,14 +1,27 @@
 <template>
     <div>
-       <nav class="d-flex justify-content-between">
+       <nav class="d-flex justify-content-between align-items-center">
          <div>
             <img src="../assets/spotify-logo.webp" alt="">
          </div>
+            <div>
+            <label for="">Seleziona per Autore</label>
+            <select name="" id=""  v-model="valueOptionSelected">
+            <option  
+            :value="element"
+             v-for="(element,index) in arrayAutoriApptoHeader" 
+             :key="index"
+             >{{element}}</option>
+            </select>
+         </div>
          <div>
-            <select name="" id="" v-model="valueOptionSelected">
-            <option  :value="element"
+            <label for="">Seleziona per Genere</label>
+            <select name="" id=""  v-model="valueOptionSelected">
+            <option  
+            :value="element"
              v-for="(element,index) in arrayGeneriApptoHeader" 
-             :key="index">{{element}}</option>
+             :key="index"
+             >{{element}}</option>
             </select>
          </div>
        </nav>
@@ -19,7 +32,8 @@
     export default {
         name:'HeaderComp',
         props:{
-         arrayGeneriApptoHeader: Array
+         arrayGeneriApptoHeader: Array,
+         arrayAutoriApptoHeader: Array
         },
 
         data(){
@@ -33,7 +47,7 @@
 
 <style lang="scss" scoped>
 nav{
-    
+    color:white;
    background-color: rgb(47, 58, 70);
     img{
         margin: 10px;
