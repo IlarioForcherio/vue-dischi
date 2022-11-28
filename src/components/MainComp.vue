@@ -16,22 +16,18 @@
 <script>
 import CardComp from '../components/CardComp.vue'
 import axios from 'axios'
-
 export default {
     name: 'MainComp',
     components: {
-
         CardComp
-
     },
     data() {
         return {
             arrayAlbum: [],
-            arrayGeneri:[]
+            arrayGeneriMain:[]
         }
     },
     mounted() {
-
         this.getAlbums();
     },
     methods: {
@@ -43,24 +39,20 @@ export default {
                     this.arrayAlbum = resp.data.response;
                     //estraggo solo il genere
                     this.arrayAlbum.forEach((singoloAlbum)=>{
-
-                        if(this.arrayGeneri.includes(singoloAlbum.genre)){
-
+                        
+                        if(!this.arrayGeneriMain.includes(singoloAlbum.genre)){
+                            this.arrayGeneriMain.push(singoloAlbum.genre)
                         }
-
-                        this.arrayGeneri.push(singoloAlbum.genre)
+                        
                        
                     })
                 })
         }
     }
-
 }
 </script>
 
 <style lang="scss" scoped>
-
-
 .main-cnt{
    background-color: rgb(30, 45, 59);
 }
@@ -71,5 +63,4 @@ export default {
     padding: 90px 0;
     
 }
-
 </style>

@@ -24,7 +24,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 .crd-cnt{ 
     
      width:calc(100% / 5 - 10px);
@@ -32,9 +31,7 @@ export default {
      
      
     
-
     .crd{
-
         padding: 10px ;
         background-color: rgb(47, 58, 70);
         color: white;
@@ -51,7 +48,6 @@ export default {
         .author,.year{
             color: rgb(125, 118, 112);
             font-size:0.7rem;
-
         }
         
        
@@ -63,9 +59,6 @@ export default {
         }
     }
 }
-
-
-
 </style>
 
 
