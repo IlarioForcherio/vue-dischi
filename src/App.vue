@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <HeaderComp/>
-        <MainComp />
+        <MainComp @emitGeneri="listaGeneri" />
         <FooterComp />
     </div>
 </template>
@@ -18,6 +18,19 @@ export default {
         MainComp,
         FooterComp,
     },
+    data() {
+        return{
+         arrayGeneri:[]
+        }
+    },
+    mounted() {
+
+    },
+    methods: {
+     listaGeneri(arrayGeneriMain){
+     this.arrayGeneri = arrayGeneriMain
+     }
+    }
 }
 </script>
 

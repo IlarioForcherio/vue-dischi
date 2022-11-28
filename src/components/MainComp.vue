@@ -28,7 +28,9 @@ export default {
         }
     },
     mounted() {
+        
         this.getAlbums();
+        this.$emit();
     },
     methods: {
         getAlbums() {
@@ -43,6 +45,8 @@ export default {
                         if(!this.arrayGeneriMain.includes(singoloAlbum.genre)){
                             this.arrayGeneriMain.push(singoloAlbum.genre)
                         }
+
+                         this.$emit('emitGeneri',this.arrayGeneriMain)
                         
                        
                     })
