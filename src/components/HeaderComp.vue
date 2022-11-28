@@ -7,7 +7,7 @@
          <div>
             <select name="" id="" v-model="valueOptionSelected">
             <option  :value="element"
-             v-for="(element,index) in arrayGeneriHeader" 
+             v-for="(element,index) in arrayGeneriApptoHeader" 
              :key="index">{{element}}</option>
             </select>
          </div>
@@ -18,9 +18,13 @@
 <script>
     export default {
         name:'HeaderComp',
+        props:{
+         arrayGeneriApptoHeader: Array
+        },
+
         data(){
             return{
-            arrayGeneriHeader:['rock','pop','jazz'],
+            
             valueOptionSelected:''
             }
         }
