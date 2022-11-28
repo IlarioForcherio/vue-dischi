@@ -20,11 +20,13 @@ export default {
     name: 'MainComp',
     components: {
         CardComp,
-        
-        // props:{
-
-        // }
     },
+
+     
+    props:{
+    selezioneApptoMain: String
+    },
+   
     data() {
         return {
             arrayAlbum: [],
@@ -32,11 +34,25 @@ export default {
             arrayAutoriMain:[]
         }
     },
+     
+    computed:{
+        funzioneComputed(){
+
+            if(selezioneApptoMain == ""){
+                return this.arrayAlbum
+            }else{
+                return this.arrayAlbum.filter((elem)=>{
+                    return elem.genre == this.selezioneApptoMain
+                })
+            }
+        }
+    }, 
+
     mounted() {
-        
+       
         this.getAlbums();
         this.$emit();
-        this.$emit();
+          this.funzioneComputed();
     },
     methods: {
         getAlbums() {

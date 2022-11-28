@@ -6,7 +6,9 @@
          </div>
             <div>
             <label for="">Seleziona per Autore</label>
-            <select name="" id=""  v-model="valueOptionSelected">
+            <select name="" id=""  
+            @click="$emit('emitSceltaHeader', valueOptionSelected )"
+             v-model="valueOptionSelected">
             <option  
             :value="element"
              v-for="(element,index) in arrayAutoriApptoHeader" 
@@ -41,6 +43,9 @@
             
             valueOptionSelected:''
             }
+        },
+        mounted(){
+            //  this.$emit('emitSceltaHeader', this.valueOptionSelected)
         }
     }
 </script>

@@ -1,10 +1,12 @@
 <template>
     <div id="app">
         <HeaderComp
-        :arrayGeneriApptoHeader="arrayGeneri"
-        :arrayAutoriApptoHeader="arrayAutori"
+        @emitSceltaHeader="sceltaUtente"
+        :arrayGeneriApptoHeader="arrayGeneriApp"
+        :arrayAutoriApptoHeader="arrayAutoriApp"
         />
         <MainComp
+        :selezioneApptoMain="opzioneSelezionata"
         @emitAutoriMain="listaAutori" 
         @emitGeneriMain="listaGeneri" />
         <FooterComp />
@@ -25,8 +27,9 @@ export default {
     },
     data() {
         return{
-         arrayGeneri:[],
-         arrayAutori:[]
+         arrayGeneriApp:[],
+         arrayAutoriApp:[],
+         opzioneSelezionata:""
         }
     },
     mounted() {
@@ -34,11 +37,18 @@ export default {
     },
     methods: {
      listaGeneri(arrayGeneriMaintoApp){
-     this.arrayGeneri = arrayGeneriMaintoApp
+     this.arrayGeneriApp = arrayGeneriMaintoApp
      },
+
      listaAutori(arrayAutoriMaintoHeader){
-     this.arrayAutori = arrayAutoriMaintoHeader
+     this.arrayAutoriApp = arrayAutoriMaintoHeader
+     },
+
+     sceltaUtente(sceltaHeadertoApp){
+      this.opzioneSelezionata = sceltaHeadertoApp
      }
+
+
     }
 }
 </script>
