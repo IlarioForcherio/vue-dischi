@@ -24,7 +24,7 @@ export default {
 
      
     props:{
-    selezioneApptoMain: String
+    // selezioneApptoMain: String
     },
    
     data() {
@@ -35,18 +35,18 @@ export default {
         }
     },
      
-    computed:{
-        funzioneComputed(){
+    // computed:{
+    //     funzioneComputed(){
 
-            if(selezioneApptoMain == ""){
-                return this.arrayAlbum
-            }else{
-                return this.arrayAlbum.filter((elem)=>{
-                    return elem.genre == this.selezioneApptoMain
-                })
-            }
-        }
-    }, 
+    //         if(selezioneApptoMain == ""){
+    //             return this.arrayAlbum
+    //         }else{
+    //             return this.arrayAlbum.filter((elem)=>{
+    //                 return elem.genre == this.selezioneApptoMain
+    //             })
+    //         }
+    //     }
+    // }, 
 
     mounted() {
        
